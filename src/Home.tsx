@@ -10,6 +10,7 @@ import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletDialogButton } from "@solana/wallet-adapter-material-ui";
+import Box from '@material-ui/core/Radio';
 
 import {
   CandyMachine,
@@ -25,7 +26,10 @@ const CounterText = styled.span``; // add your styles here
 
 const MintContainer = styled.div``; // add your styles here
 
-const MintButton = styled(Button)``; // add your styles here
+const MintButton = styled(Button)`
+  background-color: #FFD9D9;
+  color: #fff
+`; // add your styles here
 
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
@@ -167,6 +171,10 @@ const Home = (props: HomeProps) => {
 
   return (
     <main>
+      <div>
+      <h1> Suspicious Walrus Syndicate</h1>
+      <img src="sus_walrus_demo.gif"/>
+      <br />
       {wallet && (
         <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
       )}
@@ -207,7 +215,7 @@ const Home = (props: HomeProps) => {
           </MintButton>
         )}
       </MintContainer>
-
+      </div>
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}
