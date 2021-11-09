@@ -172,7 +172,7 @@ const Home = (props: HomeProps) => {
     <main>
       <div>
       <h1> Suspicious Walrus Syndicate</h1>
-      <img src="sus_walrus_demo.gif"/>
+      <img alt="suspicious walrus sample" src="sus_walrus_demo.gif"/>
       <br />
       {wallet && (
         <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
